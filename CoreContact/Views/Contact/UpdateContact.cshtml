@@ -1,0 +1,50 @@
+﻿
+@model Contact
+
+@{
+    ViewData["Title"] = "ویرایش  مخاطب ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container" style="margin-top:20px">
+    <div class="card">
+        <div class="card-header text-right">افزودن مخاطب</div>
+        <div class="card-body">
+            <form action="UpdateContact" method="post">
+                <input type="hidden"asp-for="ID"/>
+                <div class="mb-3">
+                    <input type="text" asp-for="Name" class="form-control" aria-describedby="emailHelp" placeholder="نام ونام خانوادگی را واردنمایید">
+                    <span asp-validation-for="Name" class="text-danger text-right"></span>
+                </div>
+                <div class="mb-3">
+                    <input type="text" asp-for="Tel" class="form-control" aria-describedby="emailHelp" placeholder="تلفن ثابت را واردنمایید">
+                    <span asp-validation-for="Tel" class="text-danger text-right"></span>
+                </div>
+                <div class="mb-3">
+                    <input type="text" asp-for="Mobile" class="form-control" aria-describedby="emailHelp" placeholder="موبایل را واردنمایید">
+                    <span asp-validation-for="Mobile" class="text-danger text-right"></span>
+                </div>
+                <div class="mb-3">
+                    <input type="text" asp-for="Zipcode" class="form-control" aria-describedby="emailHelp" placeholder="‍‍ کد پستی را وارد نمایید">
+                    <span asp-validation-for="Zipcode" class="text-danger text-right"></span>
+                </div>
+                <div class="mb-3">
+                    <input type="text" asp-for="Address" class="form-control" aria-describedby="emailHelp" placeholder="آدرس را واردنمایید">
+                    <span asp-validation-for="Address" class="text-danger text-right"></span>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">ویرایش مخاطب </button>
+                    <a asp-action="Index" class="btn btn-danger">برگشت</a>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+

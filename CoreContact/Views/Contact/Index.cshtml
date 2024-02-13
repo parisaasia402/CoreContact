@@ -1,0 +1,46 @@
+﻿
+@model IEnumerable<Contact>
+@{
+    ViewData["Title"] = "لیست مخاطبین";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int id = 1;
+
+}
+<div class="text-right" style="margin-top:20px">
+    <a asp-action="AddContact" class="btn btn-success">افزودن مخاطب جدید</a>
+</div>
+<div class="table-responsive">
+    <table class="table" style="margin-top:20px">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">نام ونام خانوادگی </th>
+                <th scope="col">تلفن ثابت</th>
+                <th scope="col">موبایل</th>
+                <th scope="col">کدپستی</th>
+                <th scope="col">آدرس</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody style="text-align:center">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td scope="row">@id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Tel</td>
+                    <td>@item.Mobile</td>
+                    <td>@item.Zipcode</td>
+                    <td>@item.Address</td>
+                   <td>
+                       <a a-asp-action="Update-Contact" asp-route-id="@item.ID" class="btn btn-warning btn-sm">ویرایش </a>
+                       <a a-asp-action="DeleteContact" asp-route-id="@item.ID" class="btn btn-danger btn-sm">حذف</a>
+                   </td>
+                </tr>
+                id++;
+            }
+
+        </tbody>
+    </table>
+</div>
+
